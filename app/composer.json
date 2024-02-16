@@ -1,0 +1,22 @@
+{
+    "name": "m90/rocket-framework",
+    "type": "framework",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Rocket\\Framework\\": "framework/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vadim Semeniuc",
+            "email": "semeniuc@int.pl"
+        }
+    ],
+    "require": {
+        "php": "^8.3"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^7.0"
+    }
+}

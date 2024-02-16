@@ -1,0 +1,54 @@
+version: '3'
+
+services:
+  nginx:
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./app:/var/www/project
+      - ./data/logs/nginx:/var/log/nginx
+    depends_on:
+      - php
+    networks:
+      - project
+
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./app:/var/www/project
+      - ./data/logs/php:/var/log/php
+      - ./data/logs/xdebug:/var/log/xdebug
+    depends_on:
+      - mysql
+    networks:
+      - project
+
+  mysql:
+    build:
+      context: ./docker/mysql
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./data/logs/mysql:/var/log/mysql
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    networks:
+      - project
+networks:
+  project:
