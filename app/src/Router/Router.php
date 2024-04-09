@@ -24,7 +24,12 @@ class Router
             $this->notFound();
         }
 
-        $route->getAction()();
+        if (is_array($route->getAction())) {
+            [$controller, $action] = $route->getAction();
+            call_user_func([new $controller, $action]);
+        } else {
+            $route->getAction()();
+        }
     }
 
     private function findRoute(string $uri, string $method): ?Route
