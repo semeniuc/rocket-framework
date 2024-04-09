@@ -3,8 +3,7 @@
     "type": "framework",
     "autoload": {
         "psr-4": {
-            "App\\": "src/",
-            "Rocket\\Framework\\": "framework/"
+            "App\\": "src/"
         }
     },
     "authors": [
