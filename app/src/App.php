@@ -4,13 +4,16 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Router\Router;
+
 class App
 {
-    public function run() {
-        $routes = require_once APP_PATH . '/config/routes.php';
-        $uri = $_SERVER['REQUEST_URI'] ?? null;
+    public function run(): void
+    {
+        $uri = $_SERVER['REQUEST_URI'];
+        $method = $_SERVER['REQUEST_METHOD'];
 
-        $routes[$uri]();
-
+        $router = new Router();
+        $router->dispath($uri, $method);
     }
 }
