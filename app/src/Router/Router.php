@@ -28,7 +28,7 @@ class Router
             [$controller, $action] = $route->getAction();
             call_user_func([new $controller, $action]);
         } else {
-            $route->getAction()();
+            call_user_func($route->getAction());
         }
     }
 
