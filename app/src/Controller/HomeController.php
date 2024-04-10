@@ -4,9 +4,13 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Kernel\View\View;
+
 class HomeController
 {
-    public function index() {
-        require_once APP_PATH . '/views/pages/home.php';
+    public function index()
+    {
+        $view = new View();
+        $view->page('home');
     }
 }
