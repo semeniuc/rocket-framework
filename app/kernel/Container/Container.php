@@ -7,10 +7,10 @@ namespace App\Kernel\Container;
 use App\Kernel\Http\Request;
 use App\Kernel\Router\Router;
 
-class Container
+readonly class Container
 {
-    public readonly Request $request;
-    public readonly Router $router;
+    public Request $request;
+    public Router $router;
 
 
     public function __construct(Request $request, Router $router)
