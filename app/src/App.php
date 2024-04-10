@@ -4,16 +4,18 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Http\Request;
 use App\Router\Router;
 
 class App
 {
     public function run(): void
     {
-        $uri = $_SERVER['REQUEST_URI'];
-        $method = $_SERVER['REQUEST_METHOD'];
+        $request = Request::createFromGlobals();
+
+//        dd($request);
 
         $router = new Router();
-        $router->dispath($uri, $method);
+        $router->dispath($request->uri(), $request->method());
     }
 }
