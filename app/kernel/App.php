@@ -16,9 +16,11 @@ class App
 
     public function run(): void
     {
-        $this->container->router->dispath(
-            $this->container->request->uri(),
-            $this->container->request->method()
-        );
+        $this->container
+            ->router
+            ->dispath(
+                $this->container->request->uri(),
+                $this->container->request->method()
+            );
     }
 }
