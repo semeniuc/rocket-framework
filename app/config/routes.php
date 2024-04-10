@@ -2,7 +2,7 @@
 
 use App\Controller\ContactController;
 use App\Controller\HomeController;
-use App\Router\Route;
+use App\Kernel\Router\Route;
 
 return [
     Route::get('/', [HomeController::class, 'index']),

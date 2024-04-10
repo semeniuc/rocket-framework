@@ -2,18 +2,16 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\Kernel;
 
-use App\Http\Request;
-use App\Router\Router;
+use App\Kernel\Http\Request;
+use App\Kernel\Router\Router;
 
 class App
 {
     public function run(): void
     {
         $request = Request::createFromGlobals();
-
-//        dd($request);
 
         $router = new Router();
         $router->dispath($request->uri(), $request->method());
