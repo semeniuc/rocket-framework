@@ -2,7 +2,7 @@
 
 /** @var App\Kernel\View\View $view */
 
-$view->component('header1', ['title' => "Contacts"]);
+$view->component('header', ['title' => "Contacts"]);
 ?>
 
     <h3>Contacts page</h3>
