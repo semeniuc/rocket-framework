@@ -9,14 +9,10 @@ use App\Kernel\Router\Router;
 
 readonly class Container
 {
-    public Request $request;
-    public Router $router;
-
-
-    public function __construct(Request $request, Router $router)
-    {
-        $this->request = $request;
-        $this->router = $router;
+    public function __construct(
+        public Request $request,
+        public Router $router
+    ) {
     }
 
     public static function registerServices(): static

@@ -10,9 +10,9 @@ class Route
         private string $uri,
         private string $method,
         private $action
-    )
-    {
+    ) {
     }
+
     public static function get(string $uri, $action): static
     {
         return new static($uri, 'GET', $action);
