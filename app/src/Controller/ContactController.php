@@ -8,7 +8,7 @@ use App\Kernel\Controller\Controller;
 
 class ContactController extends Controller
 {
-    public function index()
+    public function index(): void
     {
         $this->view('contact');
     }
