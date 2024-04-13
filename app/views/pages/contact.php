@@ -1,12 +1,12 @@
 <?php
 
-$pageTitle = "Contacts";
-include_once APP_PATH . "/views/components/header.php";
+use App\Kernel\View\View;
+
+/** @var View $view */
+$view->component('header', ['title' => "Contacts"]);
 ?>
 
     <h3>Contacts page</h3>
 
 <?php
-
-include_once APP_PATH . "/views/components/footer.php";
-?>
+$view->component('footer'); ?>
