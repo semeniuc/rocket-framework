@@ -19,6 +19,4 @@ abstract class Controller
     {
         $this->view->page($name, $data);
     }
-
-    abstract public function index(): void;
 }
