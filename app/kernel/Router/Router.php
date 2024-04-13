@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace App\Kernel\Router;
 
-use App\Kernel\Controller\Controller;
-use App\Kernel\View\View;
-
 class Router
 {
     private array $routes = [
@@ -29,12 +26,7 @@ class Router
 
         if (is_array($route->getAction())) {
             [$controller, $action] = $route->getAction();
-
-            /** @var Controller $controller */
-            $controller = new $controller();
-
-            call_user_func([$controller, 'setView'], new View());
-            call_user_func([$controller, $action]);
+            call_user_func([new $controller(), $action]);
         } else {
             call_user_func($route->getAction());
         }
