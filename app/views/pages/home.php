@@ -1,13 +1,12 @@
 <?php
+
+$pageTitle = "Home";
+include_once APP_PATH . "/views/components/header.php";
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
     <h3>Home page</h3>
-</body>
-</html>
+
+<?php
+
+include_once APP_PATH . "/views/components/footer.php";
+?>
