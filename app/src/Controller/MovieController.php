@@ -6,10 +6,10 @@ namespace App\Controller;
 
 use App\Kernel\Controller\Controller;
 
-class ContactController extends Controller
+class MovieController extends Controller
 {
     public function index(): void
     {
-        $this->view('contact');
+        $this->view('movies');
     }
 }

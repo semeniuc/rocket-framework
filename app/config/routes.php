@@ -1,13 +1,12 @@
 <?php
 
-use App\Controller\ContactController;
-use App\Controller\HomeController;
 use App\Kernel\Router\Route;
 
 return [
-    Route::get('/', [HomeController::class, 'index']),
-    Route::get('/contact', [ContactController::class, 'index']),
-    Route::get('/mail', function () {
-        echo 'You want to send mail?';
+    Route::get('/', [\App\Controller\HomeController::class, 'index']),
+    Route::get('/movies', [\App\Controller\MovieController::class, 'index']),
+    Route::get('/admin/movies/add', [\App\Controller\Admin\Movies\AddController::class, 'index']),
+    Route::get('/test', function () {
+        echo 'Test page';
     }),
 ];

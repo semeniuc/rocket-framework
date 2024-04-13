@@ -2,10 +2,10 @@
 
 /** @var App\Kernel\View\View $view */
 
-$view->component('header', ['title' => "Contacts"]);
+$view->component('header', ['title' => "Movies"]);
 ?>
 
-    <h3>Contacts page</h3>
+    <h3>Movies page</h3>
 
 <?php
 $view->component('footer'); ?>
