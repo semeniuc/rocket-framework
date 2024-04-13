@@ -5,7 +5,11 @@
 }
 
 body {
-    font-family: "Roboto Light", serif;
+    font-family: Arial, serif;
     background: aliceblue;
     padding: 20px;
+}
+
+h3 {
+    font-size: 28px;
 }

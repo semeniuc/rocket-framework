@@ -1,8 +1,7 @@
 <?php
 
-use App\Kernel\View\View;
+/** @var App\Kernel\View\View $view */
 
-/** @var View $view */
 $view->component('header', ['title' => "Home"]);
 ?>
 
