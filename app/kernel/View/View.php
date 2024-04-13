@@ -29,9 +29,10 @@ class View
 
         if (!file_exists($path)) {
             echo "Component $name not found";
-        } else {
-            extract($data);
-            include_once $path;
+            return;
         }
+
+        extract($data);
+        include_once $path;
     }
 }
