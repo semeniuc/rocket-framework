@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Kernel\View\View;
+use App\Kernel\Controller\Controller;
 
-class ContactController
+class ContactController extends Controller
 {
     public function index()
     {
-        $view = new View();
-        $view->page('contact');
+        $this->view('contact');
     }
 }

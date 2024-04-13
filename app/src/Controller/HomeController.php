@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Kernel\View\View;
+use App\Kernel\Controller\Controller;
 
-class HomeController
+class HomeController extends Controller
 {
     public function index()
     {
-        $view = new View();
-        $view->page('home');
+        $this->view('home');
     }
 }

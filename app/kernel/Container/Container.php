@@ -14,7 +14,7 @@ readonly class Container
         public Router $router
     ) {
     }
-
+ 
     public static function registerServices(): static
     {
         return new static(
