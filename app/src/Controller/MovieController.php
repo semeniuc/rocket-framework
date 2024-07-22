@@ -20,7 +20,6 @@ class MovieController extends Controller
 
     public function store(): void
     {
-        dd($this->request());
-        dd('store');
+        dd($this->request()->input('name'));
     }
 }
