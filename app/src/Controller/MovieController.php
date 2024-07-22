@@ -20,8 +20,7 @@ class MovieController extends Controller
 
     public function store(): void
     {
-//        dd($this->request()->input('name'));
-
+        # test
         $this->response()->send(
             content: json_encode(['value' => $this->request()->input('name')]),
             headers: ['Content-Type' => 'application/json'],
